@@ -1,0 +1,46 @@
+.formBox {
+  background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 50px;
+  width: 40%;
+  padding: 5%;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  background-color: rgb(241, 241, 241);
+  font-size: var(--fs-standard);
+  border: none;
+  border-radius: 10px;
+  padding: 15px 10px;
+}
+
+.form ::placeholder {
+  font-family: var(--cool-font);
+  color: black;
+  font-size: var(--fs-standard);
+}
+
+.form button {
+  width: 100%;
+}
+
+@media (max-width: 1023px) and (min-width: 769px) {
+  .formBox {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .formBox {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    padding: 10%;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}

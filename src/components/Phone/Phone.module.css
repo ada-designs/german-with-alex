@@ -1,0 +1,42 @@
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.box h4 {
+  font-size: 75px;
+}
+
+.phoneImg {
+  width: 400px;
+  margin-top: -50%;
+}
+
+.teacherImg {
+  width: 700px;
+  margin-top: -20%;
+}
+
+@media (max-width: 1023px) and (min-width: 769px) {
+  .teacherImg {
+    width: 500px;
+    margin-top: -20%;
+  }
+
+  .phoneImg {
+    width: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .phoneImg {
+    width: 250px;
+    margin-top: -60%;
+  }
+
+  .teacherImg {
+    width: 400px;
+    margin-top: -20%;
+  }
+}

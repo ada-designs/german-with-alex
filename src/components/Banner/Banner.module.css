@@ -1,0 +1,54 @@
+.yellowCont {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: var(--yellow-color);
+  width: 70%;
+  border-radius: 60px;
+  padding: 5%;
+  z-index: 1;
+  flex-direction: row;
+  position: relative;
+}
+
+.image {
+  width: 500px;
+  position: absolute;
+  bottom: -10%;
+  right: 0;
+}
+
+@media (max-width: 1023px) and (min-width: 769px) {
+  .yellowCont {
+    flex-direction: column;
+    padding: 10%;
+  }
+
+  .imageBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+  }
+
+  .image {
+    width: 300px;
+    bottom: -5%;
+    left: -10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .yellowCont {
+    flex-direction: column;
+    padding: 10%;
+    margin-bottom: -15%;
+  }
+
+  .image {
+    width: 150px;
+    bottom: -5%;
+    left: -20%;
+  }
+}

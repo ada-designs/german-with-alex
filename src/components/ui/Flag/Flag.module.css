@@ -1,0 +1,38 @@
+.flag {
+  display: flex;
+  flex-direction: column;
+  opacity: 0.9;
+}
+
+.stripe {
+  width: 120px;
+  height: 25px;
+}
+
+.black {
+  background-color: black;
+  border-radius: 15px 15px 0 0;
+}
+
+.red {
+  background-color: red;
+}
+
+.gold {
+  background-color: gold;
+  border-radius: 0 0 15px 15px;
+}
+
+@media (max-width: 1023px) and (min-width: 769px) {
+  .stripe {
+    width: 120px;
+    height: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .stripe {
+    width: 65px;
+    height: 13px;
+  }
+}
