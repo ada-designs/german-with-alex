@@ -3,7 +3,7 @@ import UnderlinedHeading from "../ui/UnderlinedHeading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faThumbsUp } from "@fortawesome/free-solid-svg-icons";
 
-export default function MeetMe() {
+export default function MeetMe({ isMobile }) {
   return (
     <section>
       <div className="white-container" id="about">
@@ -61,10 +61,18 @@ export default function MeetMe() {
             </ul>
           </div>
           <div style={{ display: "flex", gap: "2%" }}>
-            <a className="btn yellow-btn" style={{ width: "40%" }}>
+            <a
+              href="#phone"
+              className="btn yellow-btn"
+              style={{ width: "40%" }}
+            >
               Научи как
             </a>
-            <a href="#form" className="btn orange-btn" style={{ width: "50%" }}>
+            <a
+              href="#form"
+              className="btn orange-btn"
+              style={{ width: "50%", textAlign: isMobile ? "center" : "" }}
+            >
               Към формуляра
             </a>
           </div>

@@ -40,7 +40,7 @@ export default function App() {
 
       <Hero isDesktop={isDesktop} />
       {!isMobile ? <Ratings /> : <RatingsMobile />}
-      <MeetMe isDesktop={isDesktop} />
+      <MeetMe isDesktop={isDesktop} isMobile={isMobile} />
       <WhyMe isMobile={isMobile} />
       <Phone isDesktop={isDesktop} isTablet={isTablet} />
       <Clients isDesktop={isDesktop} />

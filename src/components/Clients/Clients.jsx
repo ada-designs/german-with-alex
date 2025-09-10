@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import UnderlinedHeading from "../ui/UnderlinedHeading";
 import styles from "./Clients.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,7 +21,7 @@ export default function Clients({ isDesktop }) {
           Доволни клиенти
         </UnderlinedHeading>
         <p style={{ textAlign: "center", width: "80%" }}>
-          Моята най-голяма награда е доверието на клиентите ми Вярвам, че
+          Моята най-голяма награда е доверието на клиентите ми. Вярвам, че
           истинската стойност на работата ми се измерва с удовлетворението на
           хората и техните отлични резултати.
         </p>
@@ -44,6 +45,12 @@ export default function Clients({ isDesktop }) {
               text="Той е изключително точен човек, уговорките с него стават много лесно и самият процес върви много гладко. Не се чудете, това е вашият учител!"
             />
           )}
+          {!isDesktop && (
+            <Video
+              video="./Video/video5.mp4"
+              text="Алекс имаше напълно индивидуален подход и ми обясняваше нещата много подробно и интересно!"
+            />
+          )}
         </div>
       </div>
     </section>
@@ -51,9 +58,38 @@ export default function Clients({ isDesktop }) {
 }
 
 function Video({ video, text }) {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    const vid = videoRef.current;
+    if (!vid) return;
+
+    const handleLoadedData = () => {
+      if (!vid.videoWidth || !vid.videoHeight) return;
+
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+
+      canvas.width = vid.videoWidth;
+      canvas.height = vid.videoHeight;
+
+      ctx.drawImage(vid, 0, 0, canvas.width, canvas.height);
+
+      // set snapshot as poster
+      vid.setAttribute("poster", canvas.toDataURL("image/png"));
+
+      // reset video to start
+      vid.currentTime = 0;
+    };
+
+    vid.addEventListener("loadeddata", handleLoadedData);
+    return () => vid.removeEventListener("loadeddata", handleLoadedData);
+  }, []);
+
   return (
     <div className={styles.box}>
       <video
+        ref={videoRef}
         src={video}
         loop
         controls

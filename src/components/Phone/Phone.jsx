@@ -12,6 +12,7 @@ export default function Phone({ isDesktop, isTablet }) {
       </UnderlinedHeading>
       <div
         className="white-container"
+        id="phone"
         style={{
           marginTop: "15%",
           justifyContent: "space-between",

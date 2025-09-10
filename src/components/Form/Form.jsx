@@ -18,7 +18,7 @@ export default function Form({ openPopup, isDesktop }) {
 
     try {
       const response = await fetch(
-        "https://formsubmit.co/a.aleksandrov2021@gmail.com",
+        "https://formsubmit.co/nemskisalex@gmail.com",
         {
           method: "POST",
           headers: {
